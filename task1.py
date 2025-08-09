@@ -15,7 +15,7 @@ def find_path(n1, m1, n2, m2):
     return res1, res2  
 
 if len(sys.argv) != 5:
-    print("n1 m1 n2 m2")
+    print("task1.py n1 m1 n2 m2")
     sys.exit(1)
 n1 = int(sys.argv[1])
 m1 = int(sys.argv[2])
