@@ -14,6 +14,6 @@ def count_steps_to_median(file1):
         print("20 ходов недостаточно для приведения всех элементов массива к одному числу; ", res)
 
 if len(sys.argv) != 2:
-    print("<task3.py> <file> needed")
+    print("<task4.py> <file> needed")
 else:
     count_steps_to_median(sys.argv[1])
