@@ -8,10 +8,17 @@ def dot_state(file1, file2):
     except FileNotFoundError:
         print(f"No such file: {file1}")
         return    
+    except ValueError:
+        print(f"Must be two nums in each line to set coordinates")
+        return
     try:
         with open(file2) as f:
             for line in f:
-                x0, y0 = map(float, line.split())
+                try:
+                    x0, y0 = map(float, line.split())
+                except ValueError:
+                    print(f"Must me two nums in each line to set coordinates")
+                    return     
                 if ((x-x0)**2 / a**2 + (y-y0)**2 / b**2 < 1):
                     print("1")
                 elif ((x-x0)**2 / a**2 + (y-y0)**2 / b**2 == 1):
@@ -22,7 +29,7 @@ def dot_state(file1, file2):
         print(f"No such file: {file1}")
         return 
 
-if len(sys.argv) < 3:
+if len(sys.argv) != 3:
         print("<task2.py> <file1> <file2> needed")
 else:
     dot_state(sys.argv[1], sys.argv[2])
